@@ -24,7 +24,7 @@ export function RootContextProvider(props) {
     setUsingCurrency([...usingCurrency, _temp[0]])
     setSelectedCurrency("")
     setAddCurrencyStatus(false)
-    // filterWithoutUsingCurrency
+    filterWithoutUsingCurrency()
   }
 
   const onChangeAmountBaseCurrency = (value) => {
@@ -43,11 +43,13 @@ export function RootContextProvider(props) {
     )
 
     setUsingCurrency(_tempUsingCurrency)
+    filterWithoutUsingCurrency()
   }
 
   const getLatest = async () => {
     try {
       const _forexLatest = await getForexLatest()
+      // eslint-disable-next-line
       let _temp = listCurrency.map((item) => {
         for (const property in _forexLatest.rates) {
           if (property.toUpperCase() === item.code.toUpperCase()) {
@@ -66,19 +68,21 @@ export function RootContextProvider(props) {
 
   const filterWithoutUsingCurrency = () => {
     let _tempOptions = []
-    optionsCurrency.forEach((e) => {
+    optionsDropdown.forEach((e) => {
       if (!JSON.stringify(usingCurrency).includes(e.value)) {
         _tempOptions.push({ value: e.value, label: e.value, name: e.name })
       }
     })
-
+    console.log(_tempOptions)
     setOptionsCurrency(_tempOptions)
   }
-
   useEffect(() => {
     getLatest()
-    filterWithoutUsingCurrency()
   }, [])
+
+  useEffect(() => {
+    filterWithoutUsingCurrency()
+  }, [usingCurrency])
 
   return (
     <RootContext.Provider

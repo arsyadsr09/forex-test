@@ -1,6 +1,6 @@
 import React from "react"
 import { BodyComponent, FullPage } from "../../components/universal"
-import { Typography, Row } from "antd"
+import { Row } from "antd"
 
 import AddCurrency from "../../components/AddCurrency"
 import UsingCurrency from "../../components/UsingCurrency"

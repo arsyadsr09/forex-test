@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { Col, Button, AutoComplete, Input } from "antd"
+import { Col, Button, AutoComplete } from "antd"
 import RootContext from "../../context"
 
 function AddCurrency() {
