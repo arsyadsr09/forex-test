@@ -19,14 +19,14 @@ export const defaultPools = [
 ]
 
 export const optionsDropdown = [
-  { value: "USD", value: "USD" },
-  { value: "CAD", value: "CAD" },
-  { value: "IDR", value: "IDR" },
-  { value: "GBP", value: "GBP" },
-  { value: "CHF", value: "CHF" },
-  { value: "SGD", value: "SGD" },
-  { value: "INR", value: "INR" },
-  { value: "MYR", value: "MYR" },
-  { value: "JPY", value: "JPY" },
-  { value: "KRW", value: "KRW" },
+  { value: "USD", label: "USD", name: "United States Dollars" },
+  { value: "CAD", label: "CAD", name: "Canadian Dollar" },
+  { value: "IDR", label: "IDR", name: "Indonesian Rupiah" },
+  { value: "GBP", label: "GBP", name: "Pound Sterling" },
+  { value: "CHF", label: "CHF", name: "Swiss Franc" },
+  { value: "SGD", label: "SGD", name: "Singapore Dollar" },
+  { value: "INR", label: "INR", name: "Indian Rupee" },
+  { value: "MYR", label: "MYR", name: "Malaysian Ringgit" },
+  { value: "JPY", label: "JPY", name: "Yen" },
+  { value: "KRW", label: "KRW", name: "Won" },
 ]
